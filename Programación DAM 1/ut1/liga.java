@@ -16,6 +16,9 @@ public class liga {
         else if (puntos >= 40) {
             System.out.println("Nos quedamos");
         }
+        else if (puntos < 11) {
+            System.out.println("Mínimos históricos");
+        }
         else {
             System.out.println("Descenso");
         }
