@@ -1,7 +1,7 @@
 public class Aforo {
 
     public static void main(String[] args) {
-        int personas = 120;
+        int personas = 110;
 
         int reservadas = 30;
         System.out.println(personas);
