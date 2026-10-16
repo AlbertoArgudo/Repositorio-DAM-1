@@ -1,0 +1,39 @@
+public class SwitchIdeaProfe {
+    
+    static void Idea1(){
+        //Un programa
+    }
+    
+    public static void main (String[] args) {
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        int n = scanner.nextInt();
+        scanner.close();
+        switch (n) {
+            case 1:
+                System.out.println("Realizamos idea 1");
+                Idea1();
+                break;
+            case 2:
+                System.out.println("Martes");
+                break;
+            case 3:
+                System.out.println("Miércoles");
+                break;
+            case 4:
+                System.out.println("Jueves");
+                break;
+            case 5:
+                System.out.println("Viernes");
+                break;
+            case 6:
+                System.out.println("Sábado");
+                break;
+            case 7:
+                System.out.println("Domingo");
+                break;
+            default:
+                System.out.println("Número de día no válido");
+                break;
+        }
+    }
+}
