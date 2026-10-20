@@ -85,8 +85,7 @@ public class ProyectoFinal {
 
     static void Eventos() {
         String[] Eventos_Globales = {"Nintendo Direct, Summer Game Fest, "};
-        String[] Evento_Compañia = {}
-        String[]
+        String[] Evento_Compañia = {"a"};
     }
 
     static void Juegos_esperados() {
