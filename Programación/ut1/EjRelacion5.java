@@ -1,10 +1,10 @@
 public class EjRelacion5 {
 
-    static int tirarDado() {
+    static int lanzarDado() {
         return (int) (Math.random() * 6) + 1; 
     }
 
-    static int danoLuffy(int dado) {
+    static int danoZoro(int dado) {
         if (dado < 1 || dado > 6) { 
             return -1;
         }
@@ -15,7 +15,7 @@ public class EjRelacion5 {
         int[] dadosFalsos = {2, 5, -3, 9};
         int[] esperados = {30, 75, -1, -1};
         for (int i = 0; i < dadosFalsos.length; i++) {
-            int dano = danoLuffy(dadosFalsos[i]);
+            int dano = danoZoro(dadosFalsos[i]);
             String estado = (dano == esperados[i]) ? "OK" : "FALLO";
             System.out.println("Dado falso=" + dadosFalsos[i] + " dano=" + dano + "-> " + estado);
         }
