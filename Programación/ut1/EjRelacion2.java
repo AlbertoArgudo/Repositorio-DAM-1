@@ -25,7 +25,7 @@ public class EjRelacion2 {
         comprobar("cuatro ingresos", 100, sumarIngresos(new int[] { 10, 20, 30, 40 }));
         comprobar("un ingreso", 7, sumarIngresos(new int[] { 7 }));
         comprobar("sin ingresos", 0, sumarIngresos(new int[] {})); // caso limite
-        comprobar("prueba erronea a proposito", 20 , sumarIngresos(new int[] { 8, 9 }));
+        comprobar("prueba erronea a proposito", 20, sumarIngresos(new int[] { 8, 9 }));
         System.out.println("Total: " + pruebasTotales + " Fallidas: " + pruebasFallidas);
     }
 }
