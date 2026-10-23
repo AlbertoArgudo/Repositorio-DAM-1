@@ -16,7 +16,7 @@ public class EjDoWhile3 {
     }
 
     public static void main(String[] args) {
-        String[] bolsillos = { "abrigo", "pantalón", "mochila", "zapato", "gorro" };
+        String[] bolsillos = { "abrigo", "pantalón", "mochila", "zapato", "gorro"};
         System.out.println("Registro 1:");
         registrar(bolsillos, "mochila");
         System.out.println("Búsqueda 2:");

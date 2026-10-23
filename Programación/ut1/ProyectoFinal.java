@@ -84,12 +84,25 @@ public class ProyectoFinal {
     }
 
     static void Eventos() {
-        String[] Eventos_Globales = {"Nintendo Direct, Summer Game Fest, "};
-        String[] Evento_Compañia = {"a"};
+        String[] Eventos_Globales = { "Summer Game Fest, Gamescom, Tokyo Game Show (TGS), The Game Awards" };
+        String[] Evento_Compañia = { "Nintendo Direct, State of Play, Xbox Games Showcase" };
+
+        String[][] listaEventos = { Eventos_Globales, Evento_Compañia };
+        System.out.println("=== Eventos ===");
+
+        for (int i = 0; i < listaEventos.length; i++) {
+            if (listaEventos[i].length == 0) {
+                System.out.println("No se a encontrado ningun evento");
+            } else {
+                for (int j = 0; j < listaEventos[i].length; j++) {
+                    System.out.println((j + 1) + ". " + listaEventos[i][j]);
+                }
+            }
+        }
     }
 
     static void Juegos_esperados() {
-
+        String[] Proximos_estrenos = { "Grand Thef Auto VI, Fable, " };
     }
 
     static void Estudios() {
@@ -120,58 +133,85 @@ public class ProyectoFinal {
 
     }
 
+    static void pausar(java.util.Scanner scanner) {
+        System.out.println("Presiona Enter para volver al menu...");
+        scanner.nextLine();
+    }
+
     public static void main(String[] args) {
-        System.out.println("Escoge entre 1-10: ");
-        System.out.println("1. Arcade ");
-        System.out.println("2. Consolas clasicas ");
-        System.out.println("3. Ganadores Goty ");
-        System.out.println("4. Eventos videojuegos ");
-        System.out.println("5. Juegos mas esperados ");
-        System.out.println("6. Estudios videojuegos ");
-        System.out.println("7. Personas influyentes videojuegos ");
-        System.out.println("8. Motores de videojuegos ");
-        System.out.println("9. Plataformas y tiendas ");
-        System.out.println("10. Curiosidades e hitos ");
         java.util.Scanner scanner = new java.util.Scanner(System.in);
-        int n = scanner.nextInt();
+        int n;
+
+        do {
+            System.out.println("Escoge entre 1-10 (0 para salir):");
+            System.out.println("1. Arcade");
+            System.out.println("2. Consolas clasicas");
+            System.out.println("3. Ganadores Goty");
+            System.out.println("4. Eventos videojuegos");
+            System.out.println("5. Juegos mas esperados");
+            System.out.println("6. Estudios videojuegos");
+            System.out.println("7. Personas influyentes videojuegos");
+            System.out.println("8. Motores de videojuegos");
+            System.out.println("9. Plataformas y tiendas");
+            System.out.println("10. Curiosidades e hitos");
+            System.out.println("0. Salir");
+
+            n = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.println();
+
+            switch (n) {
+                case 1:
+                    Arcade();
+                    pausar(scanner);
+                    break;
+                case 2:
+                    ConsolasClasicas();
+                    pausar(scanner);
+                    break;
+                case 3:
+                    GanadoresGoty();
+                    pausar(scanner);
+                    break;
+                case 4:
+                    Eventos();
+                    pausar(scanner);
+                    break;
+                case 5:
+                    Juegos_esperados();
+                    pausar(scanner);
+                    break;
+                case 6:
+                    Estudios();
+                    pausar(scanner);
+                    break;
+                case 7:
+                    Personas_influyentes();
+                    pausar(scanner);
+                    break;
+                case 8:
+                    Motores();
+                    pausar(scanner);
+                    break;
+                case 9:
+                    Plataformas();
+                    pausar(scanner);
+                    break;
+                case 10:
+                    Curiosidades();
+                    pausar(scanner);
+                    break;
+                case 0:
+                    System.out.println("Saliendo del programa...");
+                    break;
+                default:
+                    System.out.println("Numero de opcion no valido");
+                    pausar(scanner);
+                    break;
+            }
+        } while (n != 0);
+
         scanner.close();
-        switch (n) {
-            case 1:
-                System.out.println("Realizamos la opción 1");
-                Arcade();
-                break;
-            case 2:
-                System.out.println("Realizamos la opción 2");
-                ConsolasClasicas();
-                break;
-            case 3:
-                System.out.println("Realizamos la opción 3");
-                GanadoresGoty();
-                break;
-            case 4:
-                System.out.println("Realizamos la opción 4");
-                break;
-            case 5:
-                System.out.println("Realizamos la opción 5");
-                break;
-            case 6:
-                System.out.println("Realizamos la opción 6");
-                break;
-            case 7:
-                System.out.println("Realizamos la opción 7");
-                break;
-            case 8:
-                System.out.println("Realizamos la opción 8");
-                break;
-            case 9:
-                System.out.println("Realizamos la opción 9");
-                break;
-            case 10:
-                System.out.println("Realizamos la opción 10");
-                break;
-            default:
-                System.out.println("Número de día no válido");
-                break;
-        }
     }
 }

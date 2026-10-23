@@ -6,7 +6,7 @@ public class EjDoWhile4 {
             if (lista[i].equals("brócoli")) {
                 escondidos++;
                 continue;
-            }
+            }   
             System.out.println("Servido: " + lista[i]);
             servidos++;
         }
