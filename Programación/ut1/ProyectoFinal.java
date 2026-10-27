@@ -102,7 +102,8 @@ public class ProyectoFinal {
     }
 
     static void Juegos_esperados() {
-        String[] Proximos_estrenos = { "Grand Thef Auto VI, Fable, " };
+        String[] Proximos_estrenos = { "Grand Thef Auto VI, Fable, Zelda: Ocarina of Time Remake" };
+        String[] Juegos_anunciados = { "The Witcher 4 ", }
     }
 
     static void Estudios() {
