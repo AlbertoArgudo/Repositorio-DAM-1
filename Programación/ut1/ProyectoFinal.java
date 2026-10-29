@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class ProyectoFinal {
 
     static void juegos(String[] A1, String[] A2, String[] A3, String[] A4) {
@@ -101,9 +102,76 @@ public class ProyectoFinal {
         }
     }
 
-    static void Juegos_esperados() {
-        String[] Proximos_estrenos = { "Grand Thef Auto VI, Fable, Zelda: Ocarina of Time Remake" };
-        String[] Juegos_anunciados = { "The Witcher 4 ", }
+    static void buscarJuego(Scanner scanner, String[] lista) {
+        System.out.print("Introduce el nombre o palabra clave a buscar: ");
+        String busqueda = scanner.nextLine().toLowerCase();
+        boolean encontrado = false;
+
+        for (int i = 0; i < lista.length; i++) {
+            // Comprobamos obligatoriamente que la posición no sea null
+            if (lista[i] != null && lista[i].toLowerCase().contains(busqueda)) {
+                System.out.println(" ¡Encontrado! -> " + (i + 1) + ". " + lista[i]);
+                encontrado = true;
+            }
+        }
+        if (!encontrado) {
+            System.out.println("No se ha encontrado ningún juego con ese nombre.");
+        }
+    }
+
+    static void Juegos_esperados(Scanner scanner) {
+        String[] proximos = new String[10];
+        proximos[0] = "Grand Theft Auto VI";
+        proximos[1] = "Metroid Prime 4: Beyond";
+        proximos[2] = "Fable";
+        proximos[3] = "The Witcher 4 (Project Polaris)";
+        int total = 4;
+
+        int opcionSub = -1;
+        do {
+            System.out.println("\n--- GESTIÓN DE PRÓXIMOS LANZAMIENTOS ---");
+            System.out.println("1. Ver lista de juegos en el horizonte");
+            System.out.println("2. Buscar un juego en la lista");
+            System.out.println("3. Añadir nuevo juego esperado");
+            System.out.println("0. Volver al menú principal");
+            System.out.print("Elige una opción: ");
+
+            try {
+                opcionSub = Integer.parseInt(scanner.nextLine());
+                switch (opcionSub) {
+                    case 1:
+                        System.out.println("\n=== PRÓXIMOS LANZAMIENTOS ===");
+                        int i = 0;
+                        do {
+                            if (proximos[i] != null) {
+                                System.out.println((i + 1) + ". " + proximos[i]);
+                            }
+                            i++;
+                        } while (i < proximos.length && proximos[i] != null);
+                        break;
+                    case 2:
+                        buscarJuego(scanner, proximos);
+                        break;
+                    case 3:
+                        if (total < proximos.length) {
+                            System.out.print("Introduce el nombre del nuevo juego esperado: ");
+                            proximos[total] = scanner.nextLine();
+                            total++;
+                            System.out.println("¡Juego añadido con éxito a la lista!");
+                        } else {
+                            System.out.println("La lista está llena.");
+                        }
+                        break;
+                    case 0:
+                        System.out.println("Volviendo al menú principal...");
+                        break;
+                    default:
+                        System.out.println("Opción no válida en el submenú.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Error: introduce un número entero válido.");
+            }
+        } while (opcionSub != 0);
     }
 
     static void Estudios() {
@@ -180,9 +248,7 @@ public class ProyectoFinal {
                     pausar(scanner);
                     break;
                 case 5:
-                    Juegos_esperados();
-                    pausar(scanner);
-                    break;
+                    Juegos_esperados(scanner); break;
                 case 6:
                     Estudios();
                     pausar(scanner);
