@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class ProyectoFinal {
 
     static void juegos(String[] A1, String[] A2, String[] A3, String[] A4) {
@@ -140,7 +141,7 @@ public class ProyectoFinal {
                 opcionSub = Integer.parseInt(scanner.nextLine());
                 switch (opcionSub) {
                     case 1:
-                        System.out.println("\n=== PRÓXIMOS LANZAMIENTOS ===");
+                        System.out.println("=== PRÓXIMOS LANZAMIENTOS ===");
                         int i = 0;
                         do {
                             if (proximos[i] != null) {
@@ -174,8 +175,31 @@ public class ProyectoFinal {
         } while (opcionSub != 0);
     }
 
-    static void Estudios() {
+    static void Estudios(Scanner scanner) {
+        String[] estudiosList = { "Nintendo", "Rockstar Games", "FromSoftware", "Sony Santa Monica", "CD Projekt Red",
+                "Capcom", "Square Enix", "BioWare", "Valve", "Bethesda" };
+        System.out.println("=== ESTUDIOS DESTACADOS ===");
+        for (int i = 0; i < estudiosList.length; i++) {
+            System.out.println((i + 1) + ". " + estudiosList[i]);
+        }
 
+        System.out.print("¿Quieres comprobar si un estudio está en el top? (s/n): ");
+        String respuesta = scanner.nextLine();
+        if (respuesta.equalsIgnoreCase("s")) {
+            System.out.print("Escribe el nombre del estudio: ");
+            String busqueda = scanner.nextLine();
+            boolean match = false;
+            for (String est : estudiosList) {
+                if (est.equalsIgnoreCase(busqueda)) {
+                    System.out.println("¡Correcto! " + est + " figura en nuestros estudios destacados.");
+                    match = true;
+                    break;
+                }
+            }
+            if (!match) {
+                System.out.println("Ese estudio no se encuentra en este listado principal.");
+            }
+        }
     }
 
     static void Personas_influyentes() {
@@ -248,10 +272,10 @@ public class ProyectoFinal {
                     pausar(scanner);
                     break;
                 case 5:
-                    Juegos_esperados(scanner); break;
+                    Juegos_esperados(scanner);
+                    break;
                 case 6:
-                    Estudios();
-                    pausar(scanner);
+                    Estudios(scanner);
                     break;
                 case 7:
                     Personas_influyentes();
